@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<header>
+    <div class="header-container">
+        <h1>BeautySTORIE</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="товар.html"> Оттенки</a></li>
+                <li><a href="покупка.html">Купить</a></li>
+                <li><a href="rrrrrrr.html">Продукт</a></li>
+            </ul>
+        </nav>
+    </div>
+  
+</header>
+    <div class="container mt-5">
+        <div class="row text-light">
+            <div class="col-md-6">
+                <form id="cardForm">
+                    <div class="form-group">
+                        <label for="bankName">Название банка:</label>
+                        <select class="form-control" id="bankName" required>
+                            <option value="" disabled selected>Выбрать</option>
+                            <option value="">СберБанк</option>
+                            <option value="">Озон банк</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="cardNumber">Номер карты:</label>
+                        <input type="text" class="form-control" id="cardNumber" placeholder="0000 0000 0000 0000" maxlength="19" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cardHolder">Имя держателя карты:</label>
+                        <input type="text" class="form-control" id="cardHolder" placeholder="IVAN IVANOV" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            <label for="expiryMonth">Месяц :</label>
+                            <input type="number" class="form-control" id="expiryMonth" placeholder="12" required>
+                            <label for="expiryYear">Год :</label>
+                            <input type="number" class="form-control" id="expiryYear" placeholder="24" required>
+                        </div>
+                    
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="paymentSystem">Сумма:</label>
+                    
+                            <input type="text" class="form-control" id="paymentSystem" placeholder="" required>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-3">Оплатить </button>
+                </form>
+            </div>
+            <div class="col-md-6 d-flex align-items-center">
+                <div class="card">
+                    <div class="card-body ">
+                        
+                        <h1 class="card-subtitle mb-2 mt-2" id="previewCardNumber"></h1>
+                        <div class="d-flex d-inline-flex mt-4">
+                            <h3 class="card-text mr-5" id="previewCardHolder"></h3>
+                            <h3 class="card-text mr-5" id="previewExpiryDate"></h3>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 BeautySTORIE.</p>
+    </footer>
+    <script>
+        "use strict";
+document.getElementById("cardForm").addEventListener("input", function(event) {
+ 
+
+    document.getElementById("previewCardNumber").textContent = cardNumber.replace(/\d{4}(?=.)/g, "$& ");
+    document.getElementById("previewCardHolder").textContent = cardHolder;
+    document.getElementById("previewExpiryDate").textContent = `${expiryMonth}/${expiryYear}`;
+});
+document.getElementById("cardNumber").addEventListener("input", function(event) {
+    let input = event.target.value;
+    let numbersOnly = input.replace(/\D/g, "");
+    let cardNumber = numbersOnly.substring(0, 16);
+    let formattedNumber = cardNumber.match(/.{1,4}/g);
+    if (formattedNumber) {
+        formattedNumber = formattedNumber.join(" ");
+    }
+    event.target.value = formattedNumber;
+});
+
+    </script>
+    <style>
+        footer {
+background-color: #705c5c;
+color: white;
+text-align: center;
+padding: 20px 0;
+position: fixed;
+width: 100%;
+right: 0;
+bottom: 0;  
+
+}
+    </style>
+</body>
+</html>
+
+
+
+
+
+
