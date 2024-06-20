@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeautySTORIE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>BeautySTORIE</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="товар.html"> Оттенки</a></li>
+                    <li><a href="покупка.html">Купить</a></li>
+                    <li><a href="rrrrrrr.html">Продукт</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+    
+        </section>
+        <section id="about" class="info-section">
+            <h2>О нашем бренде </h2>
+            <p>Мы молодой бренд, вышедший на рынок совсем недавно. У нас приемлемая цена и премиальное качество</p>
+        </section>
+        <section id="reviews" class="info-section">
+            <h2>Отзывы</h2>
+            <div class="review">
+                <div class="review-info">
+                    <p>"Очень хороший продукт" - Анастасия Иванова</p>
+                </div>
+                <div class="review-info">
+                    <p>"Мое любимое средство" - Катя Волкова</p>
+                </div>
+            </div>
+        
+    </main>
+    <footer>
+        <p>&copy; 2024 BeautySTORIE.</p>
+    </footer>
+  <script>
+  document.addEventListener('keydown', function(event) {
+    const aboutSection = document.getElementById('about');
+    if (event.key === 'ArrowLeft') {
+        aboutSection.style.transform = 'translateX(-50px)';
+    } else if (event.key === 'ArrowRight') {
+        aboutSection.style.transform = 'translateX(50px)';
+    }
+});const reviewsSection = document.getElementById('reviews');
+const aboutSection = document.getElementById('about');
+
+reviewsSection.addEventListener('mouseover', function() {
+    reviewsSection.style.backgroundColor = 'lightpink';
+});
+
+aboutSection.addEventListener('click', function() {
+    aboutSection.style.backgroundColor = 'silver';
+});
+  </script>
+
+</body>
+</html>
